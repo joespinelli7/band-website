@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import NavBar from './containers/Navbar';
+import Navbar from './containers/Navbar';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <Navbar />
         <h1>Home</h1>
       </div>
     );
