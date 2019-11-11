@@ -14,7 +14,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="navbar-fixed">
         <nav>
           <div className="nav-wrapper red accent-4">
             <div className="container">

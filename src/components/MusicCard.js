@@ -4,7 +4,7 @@ class MusicCard extends React.Component {
   render() {
     return (
         <div className="col m4">
-          <div className="card small">
+          <div className="card medium">
             <div className="card-image">
               <img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
               <span className="card-title">Song/Album Title</span>
