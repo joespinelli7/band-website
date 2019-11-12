@@ -10,8 +10,7 @@ class MusicCard extends React.Component {
               <span className="card-title">Song/Album Title</span>
             </div>
             <div className="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p>Song/Album info.</p>
             </div>
             <div className="card-action">
               <a className="red-text" href="#">Link to Album or Songs</a>
