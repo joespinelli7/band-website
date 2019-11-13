@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 // Creates a Context object. When React renders a component that subscribes to this Context object it will read
 // the current context value from the closest matching Provider above it in the tree.
@@ -8,12 +9,18 @@ const Context = React.createContext();
 export class Provider extends React.Component {
   // want this musicList to change based off what page user is viewing.
   state={
-    musicList: [
-      { track: { track_name: 'abc'} },
-      { track: { track_name: 'lets go'} },
-      { track: { track_name: 'yah yeet'} }
-    ],
+    musicList: [],
     title: ''
+  }
+
+  componentDidMount(``) {
+    axios.get()
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   render() {
