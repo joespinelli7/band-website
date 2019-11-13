@@ -12,12 +12,14 @@ export class Provider extends React.Component {
       { track: { track_name: 'abc'} },
       { track: { track_name: 'lets go'} },
       { track: { track_name: 'yah yeet'} }
-    ]
+    ],
+    title: ''
   }
 
   render() {
+    {/* value is state that is passed to components */}
     return (
-      <Context.Provider value={this.state} {/* value is state that is passed to components */}>
+      <Context.Provider value={this.state}>
         {/* b/c Provider wraps around every other component so all other components (children) will be able to access state. */}
         {this.props.children}
       </Context.Provider>
