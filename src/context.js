@@ -12,11 +12,18 @@ export class Provider extends React.Component {
     musicList: [],
     title: ''
   }
-
+  // https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?format=jsonp&callback=callback&artist_id=7521&page_size=10&apikey=${
+  //   process.env.REACT_APP_MM_KEY
+  // }`
   componentDidMount() {
-    axios.get(`https://api.musixmatch.com/ws/1.1/chart_name=top&page=1&page_size=6&country=us&f_has_lyrics=1&apikey=${process.env.REACT_APP_MM_KEY}`)
+    axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&s_release_date=desc&apikey=${
+      process.env.REACT_APP_MM_KEY
+    }`)
       .then(res => {
         console.log(res.data)
+        this.setState({
+          musicList: res.data.message.body.album_list
+        })
       })
       .catch(error => {
         console.log(error)

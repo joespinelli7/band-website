@@ -8,12 +8,12 @@ import {Switch, Route} from 'react-router-dom';
 class App extends React.Component {
   // rapidAPI for playground
   // artist id: 7521
-  componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos/1')
-      .then(res => {
-        console.log(res)
-      })
-  }
+  // componentDidMount() {
+  //   axios.get('https://jsonplaceholder.typicode.com/todos/1')
+  //     .then(res => {
+  //       console.log(res)
+  //     })
+  // }
 
   render() {
     return (
