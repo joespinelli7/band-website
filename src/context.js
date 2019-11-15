@@ -37,9 +37,11 @@ export class Provider extends React.Component {
       }`)
     ])
       .then(axios.spread((albumData, songsDataOne, songsDataTwo) => {
-        console.log(songsDataTwo)
+        const songsArr = [...songsDataOne.data.message.body.track_list, ...songsDataTwo.data.message.body.track_list];
+        console.log(songsArr)
         this.setState({
-          albumList: albumData.data.message.body.album_list
+          albumList: albumData.data.message.body.album_list,
+          songList: songsArr
         })
       }))
       .catch(error => {
