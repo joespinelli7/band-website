@@ -10,7 +10,7 @@ class MusicLists extends React.Component {
         <Consumer>
         {/* have to change value to either song or album based off url user is on */}
           {value => {
-            const { albumList, title} = value;
+            const { albumList, title } = value;
             console.log(title)
             if (albumList === undefined || albumList.length === 0) {
               return <Spinner />

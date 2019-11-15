@@ -17,21 +17,27 @@ export class Provider extends React.Component {
   //   process.env.REACT_APP_MM_KEY
   // }`
 
-  getAlbumList = () => {
-    return axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&page_size=12&s_release_date=desc&g_album_name=1&apikey=${
-      process.env.REACT_APP_MM_KEY
-    }`);
-  }
+  // getAlbumList = () => {
+  //   return axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&page_size=12&s_release_date=desc&g_album_name=1&apikey=${
+  //     process.env.REACT_APP_MM_KEY
+  //   }`);
+  // }
 
   // add API request for songs as well and push into songList state array
   componentDidMount() {
     axios.all([
       axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&page_size=12&s_release_date=desc&g_album_name=1&apikey=${
         process.env.REACT_APP_MM_KEY
+      }`),
+      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=10641979&page=1&page_size=10&apikey=${
+        process.env.REACT_APP_MM_KEY
+      }`),
+      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=10276258&page=1&page_size=10&apikey=${
+        process.env.REACT_APP_MM_KEY
       }`)
     ])
-      .then(axios.spread((albumData) => {
-        console.log(albumData)
+      .then(axios.spread((albumData, songsDataOne, songsDataTwo) => {
+        console.log(songsDataTwo)
         this.setState({
           albumList: albumData.data.message.body.album_list
         })
