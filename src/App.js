@@ -4,6 +4,8 @@ import Navbar from './containers/Navbar';
 import MusicLists from './containers/MusicLists';
 // import axios from 'axios';
 import {Switch, Route} from 'react-router-dom';
+import {Consumer} from './context.js';
+import Spinner from './components/Spinner';
 
 class App extends React.Component {
   // rapidAPI for playground
@@ -18,10 +20,49 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={MusicLists}/>
-        </Switch>
+          <Navbar />
+          <Switch>
+            <Route exact path="/albums" render={() => {
+              return (
+                <div className="container">
+                  <Consumer>
+                    {value => {
+                        const { albumList } = value;
+                        const title = 'Albums List:'
+                        
+                        if (albumList === undefined || albumList.length === 0) {
+                          return <Spinner />
+                        } else {
+                          return (
+                            <MusicLists albumList={albumList} title={title}/>
+                          )
+                        }
+                      }}
+                    </Consumer>
+                  </div>
+              )
+            }}/>
+            <Route exact path="/songs" render={() => {
+              return (
+                <div className="container">
+                  <Consumer>
+                    {value => {
+                        const { songList } = value;
+                        const title = 'Songs List:'
+
+                        if (songList === undefined || songList.length === 0) {
+                          return <Spinner />
+                        } else {
+                          return (
+                            <MusicLists songList={songList} title={title}/>
+                          )
+                        }
+                      }}
+                    </Consumer>
+                  </div>
+              )
+            }}/>
+          </Switch>
       </div>
     );
   }
