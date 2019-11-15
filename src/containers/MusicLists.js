@@ -1,7 +1,5 @@
 import React from 'react';
 import MusicCard from '../components/MusicCard';
-import {Consumer} from '../context.js';
-import Spinner from '../components/Spinner';
 
 class MusicLists extends React.Component {
   render() {
@@ -19,9 +17,18 @@ class MusicLists extends React.Component {
       <div>
         <p className="flow-text" style={{textAlign: "center", color: '#D50000'}}>{this.props.title}</p>
         <div className="row center-cols center-align">
-          {musicList.map(musicObj => (
-            <MusicCard />
-          ))}
+          {musicList.map(musicObj => {
+            console.log(musicObj)
+            if (musicObj.album) {
+              return (
+                <MusicCard key={musicObj.album.album_id} album={musicObj.album}/>
+              )
+            } else if (musicObj.track) {
+              return (
+                <MusicCard key={musicObj.track.track_id} song={musicObj.track}/>
+              )
+            }
+          })}
         </div>
       </div>
     );

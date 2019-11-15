@@ -7,10 +7,10 @@ class MusicCard extends React.Component {
           {/* or <div className="card medium"> */}
           <div className="card">
             <div className="card-image">
-              <img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-              <span className="card-title">Song/Album Title</span>
+              <img src="https://static.stereogum.com/uploads/2019/05/californication-1559316689-828x536.jpg" />
             </div>
             <div className="card-content">
+              <span className="card-title flow-text" style={{marginBottom: "20px", color: "#D50000"}}>Song/Album Title</span>
               <p>Song/Album info.</p>
             </div>
             <div className="card-action">

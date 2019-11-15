@@ -30,8 +30,9 @@ export class Provider extends React.Component {
       }`)
     ])
       .then(axios.spread((albumData, songsDataOne, songsDataTwo) => {
+        // pulling in 2 different song list array so combining them together here:
         const songsArr = [...songsDataOne.data.message.body.track_list, ...songsDataTwo.data.message.body.track_list];
-        console.log(songsArr)
+
         this.setState({
           albumList: albumData.data.message.body.album_list,
           songList: songsArr
