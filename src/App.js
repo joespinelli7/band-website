@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './containers/Navbar';
 import MusicLists from './containers/MusicLists';
-import axios from 'axios';
+// import axios from 'axios';
 import {Switch, Route} from 'react-router-dom';
 
 class App extends React.Component {

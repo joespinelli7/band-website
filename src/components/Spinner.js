@@ -1,15 +1,15 @@
 import React from 'react';
-import classes from './Spinner.css';
+import './Spinner.css';
 
 const spinner = () => (
-  <div class="preloader-wrapper big active">
-    <div class="spinner-layer spinner-red-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div><div class="gap-patch">
-        <div class="circle"></div>
-      </div><div class="circle-clipper right">
-        <div class="circle"></div>
+  <div className="preloader-wrapper big active">
+    <div className="spinner-layer spinner-red-only">
+      <div className="circle-clipper left">
+        <div className="circle"></div>
+      </div><div className="gap-patch">
+        <div className="circle"></div>
+      </div><div className="circle-clipper right">
+        <div className="circle"></div>
       </div>
     </div>
   </div>

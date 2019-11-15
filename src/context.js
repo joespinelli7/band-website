@@ -9,22 +9,33 @@ const Context = React.createContext();
 export class Provider extends React.Component {
   // want this musicList to change based off what page user is viewing.
   state={
-    musicList: [],
+    albumList: [],
+    songList: [],
     title: ''
   }
   // https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?format=jsonp&callback=callback&artist_id=7521&page_size=10&apikey=${
   //   process.env.REACT_APP_MM_KEY
   // }`
-  componentDidMount() {
-    axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&s_release_date=desc&g_album_name=1&apikey=${
+
+  getAlbumList = () => {
+    return axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&page_size=12&s_release_date=desc&g_album_name=1&apikey=${
       process.env.REACT_APP_MM_KEY
-    }`)
-      .then(res => {
-        // console.log(res.data)
+    }`);
+  }
+
+  // add API request for songs as well and push into songList state array
+  componentDidMount() {
+    axios.all([
+      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&page_size=12&s_release_date=desc&g_album_name=1&apikey=${
+        process.env.REACT_APP_MM_KEY
+      }`)
+    ])
+      .then(axios.spread((albumData) => {
+        console.log(albumData)
         this.setState({
-          musicList: res.data.message.body.album_list
+          albumList: albumData.data.message.body.album_list
         })
-      })
+      }))
       .catch(error => {
         console.log(error)
       })
