@@ -16,11 +16,11 @@ export class Provider extends React.Component {
   //   process.env.REACT_APP_MM_KEY
   // }`
   componentDidMount() {
-    axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&s_release_date=desc&apikey=${
+    axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&s_release_date=desc&g_album_name=1&apikey=${
       process.env.REACT_APP_MM_KEY
     }`)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         this.setState({
           musicList: res.data.message.body.album_list
         })
