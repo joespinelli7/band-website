@@ -29,6 +29,7 @@ export class Provider extends React.Component {
         process.env.REACT_APP_MM_KEY
       }`)
     ])
+      // use spread to separate each get request to handle individually.
       .then(axios.spread((albumData, songsDataOne, songsDataTwo) => {
         // pulling in 2 different song list array so combining them together here:
         const songsArr = [...songsDataOne.data.message.body.track_list, ...songsDataTwo.data.message.body.track_list];

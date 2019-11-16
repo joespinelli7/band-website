@@ -2,21 +2,13 @@ import React from 'react';
 import './App.css';
 import Navbar from './containers/Navbar';
 import MusicLists from './containers/MusicLists';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import {Consumer} from './context.js';
 import Spinner from './components/Spinner';
 import Home from './components/Home';
 
 class App extends React.Component {
-  // rapidAPI for playground
   // artist id: 7521
-  // componentDidMount() {
-  //   axios.get('https://jsonplaceholder.typicode.com/todos/1')
-  //     .then(res => {
-  //       console.log(res)
-  //     })
-  // }
-
   render() {
     return (
       <div>
