@@ -19,13 +19,13 @@ export class Provider extends React.Component {
   // add API request for songs as well and push into songList state array
   componentDidMount() {
     axios.all([
-      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&page_size=12&s_release_date=desc&g_album_name=1&apikey=${
+      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=7521&page_size=12&&g_album_name=1&apikey=${
         process.env.REACT_APP_MM_KEY
       }`),
-      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=10641979&page=1&page_size=10&apikey=${
+      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=10641979&page=1&page_size=12&apikey=${
         process.env.REACT_APP_MM_KEY
       }`),
-      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=10276258&page=1&page_size=10&apikey=${
+      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=10276258&page=1&page_size=12&apikey=${
         process.env.REACT_APP_MM_KEY
       }`)
     ])

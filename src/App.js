@@ -3,9 +3,10 @@ import './App.css';
 import Navbar from './containers/Navbar';
 import MusicLists from './containers/MusicLists';
 // import axios from 'axios';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import {Consumer} from './context.js';
 import Spinner from './components/Spinner';
+import Home from './components/Home';
 
 class App extends React.Component {
   // rapidAPI for playground
@@ -29,7 +30,7 @@ class App extends React.Component {
                     {value => {
                         const { albumList } = value;
                         const title = 'Albums List:'
-                        
+
                         if (albumList === undefined || albumList.length === 0) {
                           return <Spinner />
                         } else {
@@ -62,6 +63,7 @@ class App extends React.Component {
                   </div>
               )
             }}/>
+            <Route path="/" component={Home} />
           </Switch>
       </div>
     );
