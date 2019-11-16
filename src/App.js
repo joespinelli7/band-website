@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Navbar from './containers/Navbar';
 import MusicLists from './containers/MusicLists';
-// import axios from 'axios';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {Consumer} from './context.js';
 import Spinner from './components/Spinner';

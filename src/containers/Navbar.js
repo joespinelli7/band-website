@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import {Link} from 'react-router-dom';
 
 class Navbar extends React.Component {
   componentDidMount() {
@@ -18,41 +19,27 @@ class Navbar extends React.Component {
         <nav>
           <div className="nav-wrapper red accent-4">
             <div className="container">
-              <a href="#" style={{fontSize:"2.2vw"}} className="brand-logo">Squirrel Whisperer's<i className="material-icons right" style={{fontSize:"2.2vw"}}>music_note</i></a>
+              <Link to="/"><a style={{fontSize:"2.2vw"}} className="brand-logo">Squirrel Whisperer's<i className="material-icons right" style={{fontSize:"2.2vw"}}>music_note</i></a></Link>
               <a href="#" data-target="slide-out" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><a className="waves-effect" href="sass.html">Home</a></li>
-                <li><a className="waves-effect" href="badges.html">Songs</a></li>
-                <li><a className="waves-effect" href="collapsible.html">Albums</a></li>
+                <li className="waves-effect"><Link to="/">Home</Link></li>
+                <li className="waves-effect"><Link to="/songs">Songs</Link></li>
+                <li className="waves-effect"><Link to="albums">Albums</Link></li>
               </ul>
             </div>
           </div>
         </nav>
 
         <ul id="slide-out" className="sidenav">
-          <li><a className="waves-effect" href="sass.html">Home</a></li>
+          <li className="waves-effect"><Link to="/">Home</Link></li>
           <li><div className="divider"></div></li>
-          <li><a className="waves-effect" href="badges.html">Songs</a></li>
+          <li className="waves-effect"><Link to="/songs">Songs</Link></li>
           <li><div className="divider"></div></li>
-          <li><a className="waves-effect" href="collapsible.html">Albums</a></li>
+          <li className="waves-effect"><Link to="albums">Albums</Link></li>
         </ul>
       </div>
     );
   }
 }
-
-// <div className="navbar-fixed">
-//   <nav>
-//     <div className="nav-wrapper red accent-4">
-//       <a href="#" className="brand-logo center">Squirrel Whisperer's 🎸</a>
-//       <a href="#" data-target="mobile-demo" className="right sidenav-trigger"><i className="material-icons">menu</i></a>
-//       <ul id="nav-mobile" className="right hide-on-med-and-down">
-//         <li><a href="sass.html">Home</a></li>
-//         <li><a href="badges.html">Songs</a></li>
-//         <li><a href="collapsible.html">Albums</a></li>
-//       </ul>
-//     </div>
-//   </nav>
-// </div>
 
 export default Navbar;

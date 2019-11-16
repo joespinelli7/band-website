@@ -2,6 +2,7 @@ import React from 'react';
 
 class MusicCard extends React.Component {
   render() {
+    // create all the variables to change based off if data passed in relates to album or songs data.
     let name;
     let rating;
     let releaseDate;
