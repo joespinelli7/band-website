@@ -1,4 +1,5 @@
 import React from 'react';
+import './MusicCard.css';
 
 class MusicCard extends React.Component {
   render() {
@@ -25,7 +26,7 @@ class MusicCard extends React.Component {
               <img alt="Cover Pic" src="https://static.stereogum.com/uploads/2019/05/californication-1559316689-828x536.jpg" />
             </div>
             <div className="card-content">
-              <span className="card-title flow-text" style={{marginBottom: "20px", color: "#D50000"}}><strong>{name}</strong></span>
+              <span className="card-title" style={{marginBottom: "20px", color: "#D50000"}}><strong>{name}</strong></span>
               <p>Rating: {rating}/100</p>
               {this.props.album ?
                 <p>Release Date: {releaseDate === '' ? 'N/A' : releaseDate}</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import MusicCard from '../components/MusicCard';
+import './MusicLists.css';
 
 class MusicLists extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class MusicLists extends React.Component {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <p className="flow-text" style={{textAlign: "center", color: '#D50000'}}>{this.props.title}</p>
         <div className="row center-cols center-align">
           {musicList.map(musicObj => {
@@ -28,7 +29,7 @@ class MusicLists extends React.Component {
             }
           })}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
