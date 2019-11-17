@@ -20,7 +20,7 @@ class App extends React.Component {
                   <Consumer>
                     {value => {
                         const { albumList } = value;
-                        const title = 'Albums List:'
+                        const title = 'Albums:'
 
                         if (albumList === undefined || albumList.length === 0) {
                           return <Spinner />
@@ -40,7 +40,7 @@ class App extends React.Component {
                   <Consumer>
                     {value => {
                         const { songList } = value;
-                        const title = 'Songs List:'
+                        const title = 'Songs:'
 
                         if (songList === undefined || songList.length === 0) {
                           return <Spinner />

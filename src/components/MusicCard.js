@@ -12,6 +12,9 @@ class MusicCard extends React.Component {
       name = this.props.album.album_name;
       rating = this.props.album.album_rating;
       releaseDate = this.props.album.album_release_date;
+      // releaseDate is a string in format yyyy-mm-dd so converting it to format mm/dd/yyyy
+      const dateArr = releaseDate.split('-');
+      releaseDate = dateArr[1] + '/' + dateArr[2] + '/' + dateArr[0];
     } else if (this.props.song) {
       name = this.props.song.track_name;
       rating = this.props.song.track_rating;
@@ -29,7 +32,7 @@ class MusicCard extends React.Component {
               <span className="card-title" style={{marginBottom: "20px", color: "#D50000"}}><strong>{name}</strong></span>
               <p>Rating: {rating}/100</p>
               {this.props.album ?
-                <p>Release Date: {releaseDate === '' ? 'N/A' : releaseDate}</p>
+                <p>Release Date: {releaseDate.includes('undefined') ? 'N/A' : releaseDate}</p>
                 :
                 <p>Album: {albumName}</p>
               }
