@@ -23,7 +23,7 @@ class MusicCard extends React.Component {
           {/* or <div className="card medium"> */}
           <div className="card">
             <div className="card-image">
-              <img alt="Cover Pic" src="https://static.stereogum.com/uploads/2019/05/californication-1559316689-828x536.jpg" />
+              <img className="responsive-img" alt="Cover Pic" src="https://static.stereogum.com/uploads/2019/05/californication-1559316689-828x536.jpg" />
             </div>
             <div className="card-content">
               <span className="card-title" style={{marginBottom: "20px", color: "#D50000"}}><strong>{name}</strong></span>
