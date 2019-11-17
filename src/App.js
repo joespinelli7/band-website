@@ -6,6 +6,7 @@ import {Switch, Route} from 'react-router-dom';
 import {Consumer} from './context.js';
 import Spinner from './components/Spinner';
 import Home from './components/Home';
+import Lyrics from './components/Lyrics';
 
 class App extends React.Component {
   // artist id: 7521
@@ -54,6 +55,7 @@ class App extends React.Component {
                   </div>
               )
             }}/>
+            <Route exact path="/lyrics/song/:id" component={Lyrics}/>
             <Route path="/" component={Home} />
           </Switch>
       </div>

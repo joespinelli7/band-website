@@ -1,5 +1,6 @@
 import React from 'react';
 import './MusicCard.css';
+import {Link} from 'react-router-dom';
 
 class MusicCard extends React.Component {
   render() {
@@ -41,7 +42,7 @@ class MusicCard extends React.Component {
               {this.props.album ?
                 <p className="red-text waves-effect">VIEW SONGS ON ALBUM</p>
                 :
-                <p className="red-text waves-effect">VIEW LYRICS</p>
+                <p className="waves-effect"><Link className="red-text" to={`/lyrics/song/${this.props.song.track_id}`}>VIEW LYRICS</Link></p>
               }
             </div>
           </div>

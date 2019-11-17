@@ -27,9 +27,9 @@ const home = () => {
             <div className="col s12 m4">
               <div className="icon-block">
                 <h2 className="center red-text"><i className="material-icons">whatshot</i></h2>
-                <h5 className="center">Whats hot</h5>
+                <h5 className="center">What's hot</h5>
 
-                <p className="light">New single "Devops Overlord" mentioned above! Also in the works is another groundbreaking album. Stay tuned!</p>
+                <p className="light">New single <strong style={{fontSize: "14px"}}>“Devops Overlord”</strong> mentioned above! Also in the works is another groundbreaking album. Stay tuned!</p>
               </div>
             </div>
 
@@ -77,7 +77,7 @@ const home = () => {
         </div>
         <div className="footer-copyright">
           <div className="container">
-          Made by Joseph Spinelli
+          Made by <a className="white-text" rel="noopener noreferrer" target="_blank" href="https://github.com/joespinelli7">Joseph Spinelli</a>
           </div>
         </div>
       </footer>
