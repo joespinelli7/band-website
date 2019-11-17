@@ -36,20 +36,20 @@ class Lyrics extends React.Component {
 
   render() {
     const { lyrics, song } = this.state;
-    // have to check all these cases to make sure state for all data is not empty and both are defined and return Spinner while they're not.
+    // have to check all these cases to make sure state for all data is not empty and both are defined and return Spinner while they're waiting to render.
     if (song === undefined || lyrics === undefined || Object.keys(song).length === 0 || Object.keys(lyrics).length === 0) {
       return <Spinner />
     } else {
       return (
-        <div class="row center-align">
-          <div class="col m12">
-            <div class="card valign-wrapper">
-              <div class="card-content red-text">
-                <span class="card-title" style={{textAlign: "center", marginBottom: "30px"}}><strong>{song.track_name}</strong></span>
+        <div className="row center-align">
+          <div className="col m12">
+            <div className="card valign-wrapper">
+              <div className="card-content red-text">
+                <span className="card-title" style={{textAlign: "center", marginBottom: "30px"}}><strong>{song.track_name}</strong></span>
                 <p>{lyrics.lyrics_body}</p>
               </div>
             </div>
-              <p class="waves-effect waves-light white btn-large"><Link className="red-text" to="/songs">GO BACK<i class="material-icons left">arrow_back</i></Link></p>
+              <Link className="white btn-large red-text" to="/songs">GO BACK<i className="material-icons left">arrow_back</i></Link>
           </div>
         </div>
       );
