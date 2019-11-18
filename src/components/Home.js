@@ -7,7 +7,7 @@ const home = () => {
       <div className="section no-pad-bot" id="index-banner">
         <div className="container">
           <br></br>
-          <img className="circle responsive-img" alt="logo" src="http://thecapitoltheatre.ticketfly.com/files/2017/01/il_fullxfull.948628340_fi2u-1-2-300x300.jpg" />
+          <img className="circle" alt="logo" src="http://thecapitoltheatre.ticketfly.com/files/2017/01/il_fullxfull.948628340_fi2u-1-2-300x300.jpg" />
           <h1 className="header center red-text">Welcome Squirrely's!</h1>
           <div className="row center">
             <h5 className="header col s12 light">Check out the release of our latest single, <strong>“Devops Overlord”</strong>!</h5>

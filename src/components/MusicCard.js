@@ -34,6 +34,7 @@ class MusicCard extends React.Component {
             </div>
             <div className="card-content">
               <span className="card-title" style={{marginBottom: "20px", color: "#D50000"}}><strong>{name}</strong></span>
+              <div className="divider" style={{marginBottom: "20px"}}></div>
               <p>Rating: {rating}/100</p>
               {this.props.album ?
                 <p>Release Date: {releaseDate.includes('undefined') ? 'N/A' : releaseDate}</p>
