@@ -33,7 +33,7 @@ class MusicCard extends React.Component {
               <img className="responsive-img" alt="Cover Pic" src={`${pic}`} />
             </div>
             <div className="card-content">
-              <span className="card-title" style={{marginBottom: "20px", color: "#D50000"}}><strong>{name}</strong></span>
+              <span className="card-title" style={{marginBottom: "30px", color: "#D50000"}}><strong>{name}</strong></span>
               <div className="divider" style={{marginBottom: "20px"}}></div>
               <p>Rating: {rating}/100</p>
               {this.props.album ?
