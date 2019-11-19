@@ -28,7 +28,17 @@ span.card-title {
     margin-right: auto;
   }
 
-  strong {
+  strong.song-title {
     font-size: 2rem;
+  }
+}
+
+@media all and (max-width: 676px) and (min-width: 601px) {
+  strong.song-title {
+    font-size: 15px;
+  }
+
+  div.card {
+    height: 350px;
   }
 }

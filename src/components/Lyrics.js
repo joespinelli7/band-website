@@ -43,10 +43,10 @@ class Lyrics extends React.Component {
       return (
         <div className="row center-align">
           <div className="col m12">
-            <div className="card valign-wrapper">
+            <div className="card valign-wrapper" style={{marginTop: "10vh", paddingTop: "2vh"}}>
               <div className="card-content red-text">
-                <span className="card-title" style={{textAlign: "center", marginBottom: "30px"}}><strong>{song.track_name}</strong></span>
-                <p>{lyrics.lyrics_body}</p>
+                <span className="card-title"><strong className="track-name">{song.track_name}</strong></span>
+                <p className="lyrics-body">{lyrics.lyrics_body}</p>
               </div>
             </div>
               <Link className="white btn-large red-text" to="/songs">GO BACK<i className="material-icons left">arrow_back</i></Link>

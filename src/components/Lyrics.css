@@ -1,1 +1,40 @@
+p.lyrics-body {
+  font-size: 20px;
+}
 
+strong.track-name {
+  font-size: 40px;
+}
+
+span.card-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  div.card {
+    margin-top: 5rem;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  p.lyrics-body {
+    font-size: 15px;
+  }
+
+  strong.track-name {
+    font-size: 25px;
+  }
+}
+
+@media all and (max-width: 676px) and (min-width: 601px) {
+  span.card-title {
+    font-size: 15px;
+    margin: 10px;
+  }
+
+  div.card {
+    height: 500px;
+  }
+}
