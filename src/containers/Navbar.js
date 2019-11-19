@@ -22,9 +22,10 @@ class Navbar extends React.Component {
               <Link to="/"><a style={{fontSize:"2.2vw"}} className="brand-logo">Squirrel Whisperer's<i className="material-icons right" style={{fontSize:"2.2vw"}}>music_note</i></a></Link>
               <a href="#" data-target="slide-out" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li className="waves-effect"><Link to="/">Home</Link></li>
-                <li className="waves-effect"><Link to="/songs">Songs</Link></li>
-                <li className="waves-effect"><Link to="albums">Albums</Link></li>
+                {/* replace: When true, clicking the link will replace the current entry in the history stack instead of adding a new one. */}
+                <li className="waves-effect"><Link to="/" replace>Home</Link></li>
+                <li className="waves-effect"><Link to="/songs" replace>Songs</Link></li>
+                <li className="waves-effect"><Link to="/albums" replace>Albums</Link></li>
               </ul>
             </div>
           </div>
@@ -35,7 +36,7 @@ class Navbar extends React.Component {
           <li><div className="divider"></div></li>
           <li className="waves-effect"><Link to="/songs">Songs</Link></li>
           <li><div className="divider"></div></li>
-          <li className="waves-effect"><Link to="albums">Albums</Link></li>
+          <li className="waves-effect"><Link to="/albums">Albums</Link></li>
         </ul>
       </div>
     );

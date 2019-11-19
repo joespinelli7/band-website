@@ -30,6 +30,7 @@ class Lyrics extends React.Component {
         })
       }))
       .catch(err => {
+        // handle error and display error page to user here. setState to true and display error page
         console.log(err)
       })
   }

@@ -40,6 +40,7 @@ export class Provider extends React.Component {
         })
       }))
       .catch(error => {
+        // handle error and display error page to user here. setState to true and display error page
         console.log(error)
       })
   }

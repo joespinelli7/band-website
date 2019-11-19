@@ -13,3 +13,13 @@ img.circle {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media screen and (max-width: 600px) {
+  h1.header {
+    font-size: 30px;
+  }
+
+  h5.header {
+    font-size: 18px;
+  }
+}

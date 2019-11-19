@@ -16,7 +16,6 @@ const home = () => {
             <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=_I94-tJlovg" id="download-button" className="btn-large waves-effect waves-light red">Check it out here!</a>
           </div>
           <br></br>
-
         </div>
       </div>
 
