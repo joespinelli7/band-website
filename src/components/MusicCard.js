@@ -28,7 +28,7 @@ class MusicCard extends React.Component {
     return (
         <div className="col m4 s12">
           {/* or <div className="card medium"> */}
-          <div className="card hoverable">
+          <div className="card hoverable music-card">
             <div className="card-image">
               <img className="responsive-img" alt="Cover Pic" src={`${pic}`} />
             </div>
