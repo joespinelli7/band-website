@@ -1,0 +1,17 @@
+.collection-item {
+  text-align: left;
+}
+
+.rating {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  div.album-songs {
+    margin-top: 4rem;
+  }
+
+  .song-album-title {
+    font-size: 30px;
+  }
+}

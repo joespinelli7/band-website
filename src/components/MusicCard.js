@@ -48,7 +48,7 @@ class MusicCard extends React.Component {
             </div>
             <div className="card-action">
               {this.props.album ?
-                <p className="red-text waves-effect" onClick={() => this.albumsBtn()}>VIEW SONGS ON ALBUM</p>
+                <p className="red-text waves-effect"><Link className="red-text" to={`/album/${this.props.album.album_id}/songs`}>VIEW SONGS ON ALBUM</Link></p>
                 :
                 <p className="waves-effect"><Link className="red-text" to={`/lyrics/song/${this.props.song.track_id}`}>VIEW LYRICS</Link></p>
               }
