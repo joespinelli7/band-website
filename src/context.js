@@ -7,7 +7,7 @@ const Context = React.createContext();
 
 // Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 export class Provider extends React.Component {
-  // want this musicList to change based off what page user is viewing.
+  // state to hold list of songs and albums being pulled from musixmatch api
   state={
     albumList: [],
     songList: []

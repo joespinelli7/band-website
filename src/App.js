@@ -11,7 +11,6 @@ import AlbumSongs from './components/AlbumSongs';
 import ErrorPage from './components/ErrorPage';
 
 class App extends React.Component {
-  // artist id: 7521
   render() {
     return (
       <div>

@@ -10,7 +10,7 @@ class AlbumSongs extends React.Component {
     songs: []
   }
 
-  // axios request to musixmatch api to retrieve all the songs in the album requested.
+  // axios request to musixmatch api to retrieve all the songs in the album requested based off match.params.id in url
   componentDidMount() {
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=${this.props.match.params.id}&page=1&page_size=10&apikey=${
         process.env.REACT_APP_MM_KEY
@@ -23,7 +23,7 @@ class AlbumSongs extends React.Component {
       })
       .catch(err => {
         // handle error and display error page to user here. setState to true and display error page
-        console.log(err)
+        console.log(err);
       })
   }
 
@@ -53,12 +53,5 @@ class AlbumSongs extends React.Component {
     }
   }
 }
-
-// <div className="card valign-wrapper lyrics-card" style={{marginTop: "10vh", paddingTop: "2vh"}}>
-//   <div className="card-content red-text">
-//     <span className="card-title"><strong className="track-name">{song.track_name}</strong></span>
-//     <p className="lyrics-body">{lyrics.lyrics_body}</p>
-//   </div>
-// </div>
 
 export default AlbumSongs;
