@@ -1,7 +1,10 @@
 import React from 'react';
 import './Home.css';
+import useScript from './Hooks/useScript';
 
-const home = () => {
+const Home = () => {
+  // in order to run the script everytime the home componenet is rendered instead of just once in index.html
+  useScript('https://platform.twitter.com/widgets.js');
   return (
     <React.Fragment>
       <div className="section no-pad-bot" id="index-banner">
@@ -28,7 +31,6 @@ const home = () => {
               <div className="icon-block">
                 <h2 className="center red-text"><i className="material-icons">whatshot</i></h2>
                 <h5 className="center">What's hot</h5>
-
                 <p className="light">New single <strong style={{fontSize: "14px"}}>“Devops Overlord”</strong> mentioned above! Also in the works is another groundbreaking album. Stay tuned!</p>
               </div>
             </div>
@@ -37,7 +39,6 @@ const home = () => {
               <div className="icon-block">
                 <h2 className="center red-text"><i className="material-icons">group</i></h2>
                 <h5 className="center">For the Fans</h5>
-
                 <p className="light">Enter in our weekly giveaways for a chance to win a VIP experience at the Squirrel Whisperer's concert of your choice!</p>
               </div>
             </div>
@@ -46,12 +47,14 @@ const home = () => {
               <div className="icon-block">
                 <h2 className="center red-text"><i className="material-icons">music_video</i></h2>
                 <h5 className="center">Next concert date/place</h5>
-
                 <p className="light">Our next live concert will be at Austin City Limits! With specific dates to be released soon.</p>
               </div>
             </div>
           </div>
-
+          <div className="col s12 m12 twitter">
+            <a className="twitter-timeline" data-lang="en" data-width="400" data-height="450" data-link-color="#E81C4F" href="https://twitter.com/ChiliPeppers?ref_src=twsrc%5Etfw">Tweets by ChiliPeppers</a>
+            <a className="twitter-timeline" data-width="400" data-height="450" data-link-color="#E81C4F" href="https://twitter.com/joe_spicoli/lists/squirrel-whisperer-s-fans?ref_src=twsrc%5Etfw">A Twitter List by joe_spicoli</a>
+          </div>
         </div>
         <br></br>
       </div>
@@ -85,4 +88,4 @@ const home = () => {
   )
 }
 
-export default home;
+export default Home;

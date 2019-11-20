@@ -1,6 +1,5 @@
 import React from 'react';
 import MusicCard from '../components/MusicCard';
-import './MusicLists.css';
 
 class MusicLists extends React.Component {
   render() {
@@ -22,7 +21,7 @@ class MusicLists extends React.Component {
               return (
                 <MusicCard key={musicObj.album.album_id} album={musicObj.album}/>
               )
-            } else if (musicObj.track) {
+            } else {
               return (
                 <MusicCard key={musicObj.track.track_id} song={musicObj.track}/>
               )
@@ -33,29 +32,5 @@ class MusicLists extends React.Component {
     );
   }
 }
-
-// <div className="container">
-//   <Consumer>
-//   {/* have to change value to either song or album based off url user is on */}
-//     {value => {
-//       const { albumList, title } = value;
-//       console.log(title)
-//       if (albumList === undefined || albumList.length === 0) {
-//         return <Spinner />
-//       } else {
-//         return (
-//           <React.Fragment>
-//             <h3 className="text-center mb-4">{title}</h3>
-//             <div className="row center-cols center-align">
-//               {albumList.map(albumObj => (
-//                 <MusicCard key={albumObj.album.album_id} album={albumObj.album}/>
-//               ))}
-//             </div>
-//           </React.Fragment>
-//         )
-//       }
-//     }}
-//   </Consumer>
-// </div>
 
 export default MusicLists;

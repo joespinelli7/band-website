@@ -3,6 +3,10 @@ import './MusicCard.css';
 import {Link} from 'react-router-dom';
 
 class MusicCard extends React.Component {
+  albumsBtn = () => {
+    alert("Work in progress!")
+  }
+
   render() {
     // create all the variables to change based off if data passed in relates to album or songs data.
     let name;
@@ -44,7 +48,7 @@ class MusicCard extends React.Component {
             </div>
             <div className="card-action">
               {this.props.album ?
-                <p className="red-text waves-effect">VIEW SONGS ON ALBUM</p>
+                <p className="red-text waves-effect" onClick={() => this.albumsBtn()}>VIEW SONGS ON ALBUM</p>
                 :
                 <p className="waves-effect"><Link className="red-text" to={`/lyrics/song/${this.props.song.track_id}`}>VIEW LYRICS</Link></p>
               }

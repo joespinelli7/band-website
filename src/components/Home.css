@@ -14,12 +14,27 @@ img.circle {
   margin-right: auto;
 }
 
+.twitter {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+div .twitter-timeline {
+  margin-right: 3em;
+  margin-left: 3rem;
+}
+
 @media screen and (max-width: 600px) {
   h1.header {
-    font-size: 30px;
+    font-size: 35px;
   }
 
   h5.header {
     font-size: 18px;
+  }
+
+  .twitter {
+    width: 270px;
   }
 }

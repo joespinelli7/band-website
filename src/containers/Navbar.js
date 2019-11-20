@@ -19,8 +19,8 @@ class Navbar extends React.Component {
         <nav>
           <div className="nav-wrapper red accent-4">
             <div className="container">
-              <Link to="/"><a style={{fontSize:"2.2vw"}} className="brand-logo">Squirrel Whisperer's<i className="material-icons right" style={{fontSize:"2.2vw"}}>music_note</i></a></Link>
-              <a href="#" data-target="slide-out" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
+              <Link to="/" style={{fontSize:"2.2vw"}} className="brand-logo">Squirrel Whisperer's<i className="material-icons right" style={{fontSize:"2.2vw"}}>music_note</i></Link>
+              <a href="/" data-target="slide-out" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 {/* replace: When true, clicking the link will replace the current entry in the history stack instead of adding a new one. */}
                 <li className="waves-effect"><Link to="/" replace>Home</Link></li>

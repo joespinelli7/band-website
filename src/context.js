@@ -45,8 +45,8 @@ export class Provider extends React.Component {
       })
   }
 
+  // value is state that is passed to components
   render() {
-    {/* value is state that is passed to components */}
     return (
       <Context.Provider value={this.state}>
         {/* b/c Provider wraps around every other component so all other components (children) will be able to access state. */}
