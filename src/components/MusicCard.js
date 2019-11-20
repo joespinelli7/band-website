@@ -3,9 +3,6 @@ import './MusicCard.css';
 import {Link} from 'react-router-dom';
 
 class MusicCard extends React.Component {
-  albumsBtn = () => {
-    alert("Work in progress!")
-  }
 
   render() {
     // create all the variables to change based off if data passed in relates to album or songs data.
@@ -31,7 +28,6 @@ class MusicCard extends React.Component {
 
     return (
         <div className="col m4 s12">
-          {/* or <div className="card medium"> */}
           <div className="card hoverable music-card">
             <div className="card-image">
               <img className="responsive-img" alt="Cover Pic" src={`${pic}`} />

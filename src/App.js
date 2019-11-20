@@ -8,6 +8,7 @@ import Spinner from './components/Spinner';
 import Home from './components/Home';
 import Lyrics from './components/Lyrics';
 import AlbumSongs from './components/AlbumSongs';
+import ErrorPage from './components/ErrorPage';
 
 class App extends React.Component {
   // artist id: 7521
@@ -58,7 +59,8 @@ class App extends React.Component {
             }}/>
             <Route exact path="/lyrics/song/:id" component={Lyrics}/>
             <Route exact path="/album/:id/songs" component={AlbumSongs}/>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route component={ErrorPage} />
           </Switch>
       </div>
     );
