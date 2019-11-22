@@ -9,50 +9,57 @@ import Home from './components/Home';
 import Lyrics from './components/Lyrics';
 import AlbumSongs from './components/AlbumSongs';
 import ErrorPage from './components/ErrorPage';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from './context.js';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <BrowserRouter>
+        <div>
           <Navbar />
           <Switch>
             <Route exact path="/albums" render={() => {
               return (
                 <div className="container">
-                  <Consumer>
-                    {value => {
-                        const { albumList } = value;
-                        const title = 'Albums:'
+                  <Provider>
+                    <Consumer>
+                      {value => {
+                          const { albumList } = value;
+                          const title = 'Albums:'
 
-                        if (albumList === undefined || albumList.length === 0) {
-                          return <Spinner />
-                        } else {
-                          return (
-                            <MusicLists albumList={albumList} title={title}/>
-                          )
-                        }
-                      }}
-                    </Consumer>
+                          if (albumList === undefined || albumList.length === 0) {
+                            return <Spinner />
+                          } else {
+                            return (
+                              <MusicLists albumList={albumList} title={title}/>
+                            )
+                          }
+                        }}
+                      </Consumer>
+                    </Provider>
                   </div>
               )
             }}/>
             <Route exact path="/songs" render={() => {
               return (
                 <div className="container">
-                  <Consumer>
-                    {value => {
-                        const { songList } = value;
-                        const title = 'Songs:'
+                  <Provider>
+                    <Consumer>
+                      {value => {
+                          const { songList } = value;
+                          const title = 'Songs:'
 
-                        if (songList === undefined || songList.length === 0) {
-                          return <Spinner />
-                        } else {
-                          return (
-                            <MusicLists songList={songList} title={title}/>
-                          )
-                        }
-                      }}
-                    </Consumer>
+                          if (songList === undefined || songList.length === 0) {
+                            return <Spinner />
+                          } else {
+                            return (
+                              <MusicLists songList={songList} title={title}/>
+                            )
+                          }
+                        }}
+                      </Consumer>
+                    </Provider>
                   </div>
               )
             }}/>
@@ -61,7 +68,8 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route component={ErrorPage} />
           </Switch>
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }
